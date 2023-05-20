@@ -76,7 +76,6 @@ section {
 }
 
 .section-heading {
-<<<<<<< HEAD
   font-size: 2.8rem;
   font-weight: 700;
   background: linear-gradient(-45deg, #3db3c5, #274685);
@@ -89,13 +88,6 @@ section {
   background: linear-gradient(-45deg, #3db3c5, #274685);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-=======
-    font-size: 3rem;
-    font-weight: 700;
-    background: linear-gradient(-45deg, #3db3c5, #274685);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
->>>>>>> 22d3713beaec6e4d531ee27646a6c23673548308
 }
 /*--------------------------------------------------------------
 # Back to top button
@@ -172,17 +164,10 @@ section {
     background: linear-gradient(-45deg, #3b87bd, #2d71a2);
 }
 
-<<<<<<< HEAD
 .feature-1 .wrap-icon img {
  
   color: #fff;
   
-=======
-.feature-1 .wrap-icon i {
-    font-size: 40px;
-    line-height: 0;
-    color: #fff;
->>>>>>> 22d3713beaec6e4d531ee27646a6c23673548308
 }
 .hajj-img{
   height: 150px;
