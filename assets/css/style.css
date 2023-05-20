@@ -76,13 +76,19 @@ section {
 }
 
 .section-heading {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 700;
   background: linear-gradient(-45deg, #3db3c5, #274685);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+.section-heading-01{
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(-45deg, #3db3c5, #274685);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -158,11 +164,27 @@ section {
   background: linear-gradient(-45deg, #3b87bd, #2d71a2);
 }
 
-.feature-1 .wrap-icon i {
-  font-size: 40px;
-  line-height: 0;
+.feature-1 .wrap-icon img {
+ 
   color: #fff;
+  
 }
+.hajj-img{
+  height: 150px;
+  width:150px;
+}
+.umrah-img{
+  margin-bottom: 5px;
+  height:80px;
+  width: 80px;
+
+}
+.ziarat-img{
+  height:100px;
+  width: 100px;
+
+}
+
 
 .feature-1 h3 {
   font-size: 20px;
