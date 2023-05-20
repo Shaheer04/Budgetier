@@ -89,6 +89,26 @@ section {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+
+/*Requirements */
+ .requi-u{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2rem;
+  padding-bottom: 50px;
+}
+.requi-u>li{
+  justify-content: left;
+  align-items: start;
+  margin-top: 10px;
+} 
+
+
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -110,7 +130,7 @@ section {
     font-size: 28px;
     color: #fff;
     line-height: 0;
-}
+} 
 
 .back-to-top:hover {
     background: #3687c1;
