@@ -93,7 +93,7 @@ section {
 }
 
 #contact-us-container {
-    /* background: linear-gradient(-45deg, #3db3c5, #274685); */
+    /* x`background: linear-gradient(-45deg, #3db3c5, #274685); */
 }
 
 /*Requirements */
@@ -262,8 +262,8 @@ section {
     color: #fff;
     
 }
-.step>a{
-    color: #fff;
+.step>a>h3{
+    color: #f3b02f;
 }
 
 .step .number {
