@@ -2,7 +2,7 @@ var mealPrices = 860;
 var departureCity;
 var arrivalCity;
 var flightClass = "Economy";
-var adults = 0;
+var adults = 1;
 var children = 0;
 var nextDestination;
 var meals = 2;
@@ -69,6 +69,7 @@ $(document).ready(function () {
       PopulateAirlines();
       PopulateNextDestination();
       CalculateBudget();
+      GiveCitiesSuggestion();
     },
   });
 });
@@ -143,6 +144,8 @@ function DestinationChanged(e) {
       transportSelect.innerHTML = "";
       for (var i = 0; i < availableTransports.length; i++)
         transportSelect.innerHTML += `<option value="${availableTransports[i].type}">${availableTransports[i].type}</option>`;
+
+      GiveTransportSuggestion(transportSelect);
     }
   }
 
@@ -150,10 +153,12 @@ function DestinationChanged(e) {
 }
 
 function TransportChanged(e) {
+  GiveTransportSuggestion(e);
   CalculateBudget();
 }
 
 function HotelChanged(e) {
+  GiveHotelSuggestion(e);
   CalculateBudget();
 }
 
@@ -239,11 +244,14 @@ function CalculateBudget() {
         $("#tblDestinations tbody").children()[rowIndex - 2]
       ).children()[0].children[0].value;
 
-      transportCost += _.find(transport, function (x) {
-        return x.departureCity == lastDestination &&
-          x.arrivalCity == currentDestination &&
-          x.type == transportType;
-      }).price * 75;
+      transportCost +=
+        _.find(transport, function (x) {
+          return (
+            x.departureCity == lastDestination &&
+            x.arrivalCity == currentDestination &&
+            x.type == transportType
+          );
+        }).price * 75;
     }
 
     if (hotel && hotel != "") {
@@ -261,6 +269,142 @@ function CalculateBudget() {
   amount += transportCost;
   amount += hotelCost;
   amount += meals * mealPrices * totalDays;
-  
-  $('#lblBudget').text(amount.toLocaleString());
+
+  $("#lblBudget").text(amount.toLocaleString());
+}
+
+function ShowAlert(message) {
+  var colors = [
+    "alert-warning",
+    "alert-success",
+    "alert-info",
+    "alert-primary",
+    "alert-dark",
+  ];
+  $(".alert")[0].innerHTML = message;
+  $(".alert").attr("class", `alert ${colors[Math.floor(Math.random() * 5)]}`);
+  $(".alert").fadeIn();
+
+  setTimeout(function () {
+    $(".alert").fadeOut();
+  }, 7000);
+}
+
+function GiveCitiesSuggestion() {
+  var currentFlightPrice = Math.min(
+    ..._.filter(flights, function (x) {
+      return x.from == departureCity && x.to == arrivalCity;
+    }).map((x) => x.economy_price)
+  );
+
+  var recommended = _.filter(flights, function (x) {
+    return x.economy_price < currentFlightPrice && x.to == arrivalCity;
+  }).sort(function (a, b) {
+    return a.economy_price - b.economy_price;
+  });
+
+  if (recommended.length)
+    ShowAlert(`<strong>Suggesstion !</strong> <p>It will save Rs.${(
+      currentFlightPrice - recommended[0].economy_price
+    ).toLocaleString()} if you travel from 
+    <strong>${recommended[0].from}</strong> to <strong>${
+      recommended[0].to
+    }</strong></p>`);
+}
+
+function GiveTransportSuggestion(e) {
+  var currentDestination = $(e).parent().parent().children()[0]
+    .children[0].value;
+  var currentIndex = $(e).parent().parent()[0].rowIndex;
+
+  var previousDestionation = $(
+    $("#tblDestinations tbody").children()[currentIndex - 2]
+  ).children()[0].children[0].value;
+  var transportType = e.value;
+
+  var currentTransport = _.find(transport, function (x) {
+    return (
+      x.departureCity == previousDestionation &&
+      x.arrivalCity == currentDestination &&
+      x.type == transportType
+    );
+  });
+
+  var recommended = _.filter(transport, function (x) {
+    return (
+      x.departureCity == previousDestionation &&
+      x.arrivalCity == currentDestination &&
+      x.price < currentTransport.price
+    );
+  }).sort(function (a, b) {
+    return a.price - b.price;
+  });
+
+  if (recommended.length)
+    ShowAlert(`<strong>Suggesstion !</strong> <p>It will save Rs.${(
+      (currentTransport.price - recommended[0].price) *
+      75
+    ).toLocaleString()} if you travel via <strong>${
+      recommended[0].type
+    }</strong> from 
+ <strong>${recommended[0].departureCity}</strong> to <strong>${
+      recommended[0].arrivalCity
+    }</strong></p>`);
+}
+
+function GiveHotelSuggestion(e) {
+  var currentDestination = $(e).parent().parent().children()[0]
+    .children[0].value;
+  var currentIndex = $(e).parent().parent()[0].rowIndex;
+
+  var currentHotel = _.find(hotels, function (x) {
+    return x.HotelName == e.value;
+  });
+
+  var recommended = _.filter(hotels, function (x) {
+    return x.HotelAddress == currentDestination && x.Price < currentHotel.Price;
+  }).sort(function (a, b) {
+    return a.Price - b.Price;
+  });
+
+  if (recommended.length)
+    ShowAlert(
+      `<strong>Suggesstion !</strong> <p>It will save Rs.${(
+        (currentHotel.Price - recommended[0].Price) *
+        75
+      ).toLocaleString()} if you stay in <strong>${
+        recommended[0].HotelName
+      }</strong></p>`
+    );
+}
+
+function ResetForm() {
+  var departureCityDropdown = $("#txtDepartureCity").selectize();
+  var control = departureCityDropdown[0].selectize;
+  control.clear();
+
+  var arrivalCityDropdown = $("#txtArrivalCity").selectize();
+  var control = arrivalCityDropdown[0].selectize;
+  control.clear();
+
+  $("#txtAdults").val(1);
+  $("#txtChildren").val(0);
+
+  var airlinesDropdown = $("#txtAirlines").selectize();
+  var control = airlinesDropdown[0].selectize;
+  control.clear();
+
+  var classDropdown = $("#txtClass").selectize();
+  var control = classDropdown[0].selectize;
+  control.setValue("Economy");
+
+  $("#txtMeals").val(2);
+  $("#lblBudget").text("0.00");
+}
+
+function RemoveDestination(e) {
+  if ($(e).parent().parent()[0].rowIndex != 1) {
+    $(e).parent().parent().remove();
+    CalculateBudget();
+  }
 }
