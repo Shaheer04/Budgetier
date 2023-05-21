@@ -98,7 +98,11 @@ section {
     margin-top: 20px;
 }
 
-.section-requirements {
+#required-documents {
+    background: linear-gradient(-45deg, #3db3c5, #274685);
+}
+
+#contact-us-container {
     background: linear-gradient(-45deg, #3db3c5, #274685);
 }
 
@@ -130,7 +134,7 @@ section {
 }
 
 .umrah-req {
-    width: 50%;
+    width: 100%;
 }
 
 .umrah-req>li {
@@ -292,7 +296,7 @@ section {
 }
 
 .review .review-user img {
-    width: 70px;
+    width: 150px;
     margin: 0 auto;
 }
 
