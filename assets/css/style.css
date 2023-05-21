@@ -1,14 +1,4 @@
-/**
-* Template Name: SoftLand
-* Updated: Mar 10 2023 with Bootstrap v5.2.3
-* Template URL: https://bootstrapmade.com/softland-bootstrap-app-landing-page-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 html {
     overflow-x: hidden;
 }
@@ -72,7 +62,7 @@ section {
 }
 
 .section {
-    padding: 7rem 0;
+    padding: 6rem 0;
 }
 
 .section-heading {
@@ -103,7 +93,7 @@ section {
 }
 
 #contact-us-container {
-    background: linear-gradient(-45deg, #3db3c5, #274685);
+    /* x`background: linear-gradient(-45deg, #3db3c5, #274685); */
 }
 
 /*Requirements */
@@ -254,12 +244,26 @@ section {
 .feature-1 p {
     color: #b1b1b1;
 }
+.card{
+    margin-top: 30pxc;
+    padding: 20px;
+    color: #fff;
+    
+}
 
 /* Step */
 .step {
-    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
-    background: #fff;
+
+    background: linear-gradient(-45deg, #1391a5, #274685);
     padding: 40px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #fff;
+    
+}
+.step>a>h3{
+    color: #f3b02f;
 }
 
 .step .number {
@@ -279,12 +283,13 @@ section {
 /* Review */
 .review h3 {
     font-size: 20px;
+    color: #fff;
 }
 
 .review p {
     line-height: 1.8;
     font-style: italic;
-    color: #333333;
+    color: #fff;
 }
 
 .review .stars span {
@@ -300,10 +305,12 @@ section {
     margin: 0 auto;
 }
 
+
 /* Testimonial Carousel */
 .testimonials-slider .swiper-pagination {
     margin-top: 20px;
     position: relative;
+    
 }
 
 .testimonials-slider .swiper-pagination .swiper-pagination-bullet {
