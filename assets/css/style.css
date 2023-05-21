@@ -1057,3 +1057,34 @@ section {
 .social a i {
     line-height: 0;
 }
+
+/*--------------------------------------------------------------
+# form
+--------------------------------------------------------------*/
+
+.main-form form label {
+    font-weight: 500;
+}
+
+.main-form form textarea.form-control {
+    height: 150px;
+}
+
+.main-form form .loading,
+.main-form form .error-message,
+.main-form form .sent-message {
+    display: none;
+    margin-top: 10px;
+    color: #6c757d;
+}
+
+.main-form form .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.main-form form .btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
