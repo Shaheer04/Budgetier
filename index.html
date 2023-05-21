@@ -31,11 +31,10 @@
     <link href="src/css/selectize.css" rel="stylesheet">
 
     <style>
-        #btnAddNewRow {
-            padding: 0;
+        div > label{
+            color: #f3b02f !important;
         }
     </style>
-
 </head>
 
 <body>
@@ -61,9 +60,10 @@
             </nav>
 
         </div>
-    </header><!-- End Header -->
+    </header>
 
     <main id="main">
+
         <!-- Home Section -->
         <section class="hero-section" id="hero">
 
@@ -93,7 +93,9 @@
                                 <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><a href="#planning"
                                         class="btn btn-outline-white">Start planning</a></p>
                             </div>
-                            <div class="col-lg-5 iphone-wrap" style="background-image: url('assets/img/heroimg.png');background-position: top;background-repeat: no-repeat;background-size: contain;" data-aos="fade-up"x`x`>
+                            <div class="col-lg-5 iphone-wrap"
+                                style="background-image: url('assets/img/heroimg.png');background-position: top;background-repeat: no-repeat;background-size: contain;"
+                                data-aos="fade-up" x`x`>
                                 <!-- <img src="assets/img/heroimg.png" width="500" alt="Image" class="phone-1" data-aos="fade-right"> -->
                             </div>
                         </div>
@@ -104,7 +106,7 @@
         </section>
 
         <!-- Planning Section -->
-        <section class="section" id="planning">
+        <section class="section" id="planning" data-aos="fade-up" data-aos-delay="">
             <div class="container">
 
                 <div class="row justify-content-center text-center mb-5">
@@ -114,7 +116,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="">
+                    <div class="col-md-4">
                         <div class="feature-1 text-center">
                             <div class="wrap-icon icon-1">
                                 <img src="./assets/img/madinasymbol.png" alt="" class="umrah-img">
@@ -143,7 +145,7 @@
                     </div>
                 </div>
 
-                <div class="row mt-5"  style="border: 1px solid grey; border-radius: 50px;">
+                <div class="row mt-5" style="border: 1px solid grey; border-radius: 50px; background: linear-gradient(to right, rgba(39, 70, 133, 0.8) 0%, rgba(61, 179, 197, 0.8) 100%), lightblue;">
                     <div class="offset-md-2 col-md-8 mb-5 mb-md-0 py-5" data-aos="fade-up">
                         <form id="mainForm">
                             <div class="alert alert-info" style="display: none;" role="alert"></div>
@@ -236,7 +238,9 @@
                                                     value="1" onchange="DaysChanged(this)">
                                             </td>
                                             <td width="100px">
-                                                <button class="btn btn-danger" type="button" style="padding: 5px !important; margin-top: 10px;" onclick="RemoveDestination(this)">Remove</button>
+                                                <button class="btn btn-danger" type="button"
+                                                    style="padding: 5px !important; margin-top: 10px;"
+                                                    onclick="RemoveDestination(this)">Remove</button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -251,8 +255,11 @@
                                 </div>
 
                                 <div class="col-md-6 form-group mt-3 d-flex align-items-end justify-content-end">
-                                    <span style="font-size: 40px; margin-right: 10px" class="mr-5" id="lblBudget">0.00</span>
-                                    <button type="reset" class="btn btn-warning" style="padding: 10px !important; margin-bottom: 10px;" onclick="ResetForm()">Reset</button>
+                                    <span style="font-size: 40px; margin-right: 10px; color: white;" class="mr-5"
+                                        id="lblBudget">0.00</span>
+                                    <button type="reset" class="btn btn-warning"
+                                        style="padding: 10px !important; margin-bottom: 10px;"
+                                        onclick="ResetForm()">Reset</button>
                                 </div>
                             </div>
                         </form>
@@ -275,9 +282,9 @@
                     <div class="col-md-6">
                         <ul class="umrah-req">
                             <h3>Umrah Requirements </h3>
-                            <li> Umrah visa application form.</li>
-                            <li> One recent passport photograph.</li>
-                            <li>Valid passport with a six-month validity period.</li>
+                            <li>Umrah visa.</li>
+                            <li>Passport.</li>
+                            <li>Passport size  pictures.</li>
                             <li>Purchased non-refundable flight tickets.</li>
                             <li>Evidence of a relationship between female pilgrims and their ‘mahram’.</li>
                             <li>You have to apply for the specific visa you need since you cannot perform Hajj under an
@@ -290,13 +297,12 @@
                         <ul class="requi-u">
                             <h3>Hajj Requirements </h3>
                             <li>Hajj Visa.</li>
-                            <li> Passport.</li>
+                            <li>Passport.</li>
                             <li>Mahram Letter for Females.</li>
                             <li>Shahadah Certificate (for converts only)</li>
                             <li>Certificate of Meningitis</li>
                             <li>Copy of Marriage Certificate </li>
                             <li>Copy of Birth Certificate for Minors.</li>
-                            <li>Passport & Green Card.</li>
                         </ul>
                     </div>
                 </div>
@@ -305,66 +311,71 @@
 
         </section>
 
-
         <!--Travel Agencies-->
-        <section>
-            <div data-aos="fade-up">
+        <section class="section" data-aos="fade-up">
+            <div>
 
-                <div class="section-heading justify-content-center align-items-center text-center" style="padding: 40px;">
-                 <h2>Recommended Travel Agencies</h2>
+                <div class="section-heading justify-content-center align-items-center text-center"
+                    style="padding: 40px;">
+                    <h2>Recommended Travel Agencies</h2>
                 </div>
-                 <div>
-                     <div class="row">
-                         <div class="col-md-4">
-                           <div class="step">
-                             <a href="https://al-khair.org/" target="_blank"><h3>Al-Khair</h3></a>
-                             <p>Contact: +92 300 0800 717</p>
-                           </div>
-                         </div>
-                         <div class="col-md-4">
-                           <div class="step">
-                             <a href="https://www.arqemhajj.com/" target="_blank"><h3>ARQEM HAJJ</h3></a>
-                             <p>Contact: 111-012-111</p>
-                           </div>
-                         </div>
-                         <div class="col-md-4">
-                           <div class="step">
-                           
-                             <a href="https://www.alharamtravel.com/" target="_blank"><h3>AlHaram Travel</h3></a>
-                             <p>Contact: 888-608-1057</p>
-                           </div>
-                         </div>
-                         <div class="col-md-4">
-                             <div class="step">
-                               <a href="https://gerrystravel.com/index.html" target="_blank"><h3>Garry's Hajj and Umrah</h3></a>
-                               <p>Contact: +92-35170951-5</p>
-                             </div>
-                           </div>
-                           <div class="col-md-4">
-                             <div class="step">
-                               <a href="https://alkhalidtours.com/index.html" target="_blank"><h3>AlKhalid Tours</h3></a>
-                               <p>Contact: +91-22-2301 1111</p>
-                             </div>
-                           </div>   
-                           <div class="col-md-4">
-                             <div class="step">
-                               <a href="https://www.alharamtravel.com/" target="_blank"><h3>AlHashmi</h3></a>
-                               <p>Contact: +9221-35211012-13</p>
-                             </div>
-                           </div>    
-                           
-                       </div>
-                 </div>
+                <div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="step">
+                                <a href="https://al-khair.org/" target="_blank">
+                                    <h3>Al-Khair</h3>
+                                </a>
+                                <p>Contact: +92 300 0800 717</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="step">
+                                <a href="https://www.arqemhajj.com/" target="_blank">
+                                    <h3>ARQEM HAJJ</h3>
+                                </a>
+                                <p>Contact: 111-012-111</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="step">
+
+                                <a href="https://www.alharamtravel.com/" target="_blank">
+                                    <h3>AlHaram Travel</h3>
+                                </a>
+                                <p>Contact: 888-608-1057</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="step">
+                                <a href="https://gerrystravel.com/index.html" target="_blank">
+                                    <h3>Garry's Hajj and Umrah</h3>
+                                </a>
+                                <p>Contact: +92-35170951-5</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="step">
+                                <a href="https://alkhalidtours.com/index.html" target="_blank">
+                                    <h3>AlKhalid Tours</h3>
+                                </a>
+                                <p>Contact: +91-22-2301 1111</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="step">
+                                <a href="https://www.alharamtravel.com/" target="_blank">
+                                    <h3>AlHashmi</h3>
+                                </a>
+                                <p>Contact: +9221-35211012-13</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
         </section>
-         
-
-
-
-
-
-
 
         <!-- About Us-->
         <section class="section py-5 mt-5" style="background: linear-gradient(-45deg, #1391a5, #274685);" id="about-us">
@@ -384,14 +395,14 @@
                                     <div class="review text-center">
                                         <h3>Muhammad Hussain Kas</h3>
                                         <blockquote>
-                                            <p>A young but talented cybersecurity researcher</p>
+                                            <p>Young but talented cybersecurity researcher</p>
                                         </blockquote>
 
                                         <p class="review-user">
                                             <img src="assets/img/hussain.jpg" alt="Image"
                                                 class="img-fluid rounded-circle mb-3">
                                             <span class="d-block">
-                                                <span class="text-black">Hussain Kas</span>, &mdash; cybersecurity
+                                                <span class="text-light">Hussain Kas</span> &mdash; cybersecurity
                                                 researcher
                                             </span>
                                         </p>
@@ -410,7 +421,7 @@
                                             <img src="assets/img/zaid.jpg" alt="Image"
                                                 class="img-fluid rounded-circle mb-3">
                                             <span class="d-block">
-                                                <span class="text-black">Syed Zaid Ali</span> &mdash;Chatbot specialist
+                                                <span class="text-light">Syed Zaid Ali</span> &mdash;Chatbot specialist
                                             </span>
                                         </p>
 
@@ -429,7 +440,7 @@
                                             <img src="assets/img/yasir.jpeg" alt="Image"
                                                 class="img-fluid rounded-circle mb-3">
                                             <span class="d-block">
-                                                <span class="text-black">Yasir Irfan</span> &mdash; MERN Stack Dev
+                                                <span class="text-light">Yasir Irfan</span> &mdash; MERN Stack Dev
                                             </span>
                                         </p>
 
@@ -440,7 +451,7 @@
                                 <div class="swiper-slide">
                                     <div class="review text-center">
 
-                                        <h3>Shahriyar Ali</h3>
+                                        <h3>Syed Shahriyar Ali</h3>
                                         <blockquote>
                                             <p>Develop .Net applications for efficient software solutions. </p>
                                         </blockquote>
@@ -449,7 +460,8 @@
                                             <img src="assets/img/shehryar.jpeg" alt="Image"
                                                 class="img-fluid rounded-circle mb-3">
                                             <span class="d-block">
-                                                <span class="text-black">Shehryar Ali</span>, &mdash; .Net develoepr
+                                                <span class="text-light">Syed Shahriyar Ali</span> &mdash; .Net
+                                                develoepr
                                             </span>
                                         </p>
 
@@ -468,7 +480,7 @@
                                             <img src="assets/img/ashhad.jpeg" alt="Image"
                                                 class="img-fluid rounded-circle mb-3">
                                             <span class="d-block">
-                                                <span class="text-black">Ashhad Ahmed</span>, &mdash; data scientist
+                                                <span class="text-light">Ashhad Ahmed</span> &mdash; data scientist
                                             </span>
                                         </p>
 
@@ -487,7 +499,7 @@
                                             <img src="assets/img/shaheer.jpeg" alt="Image"
                                                 class="img-fluid rounded-circle mb-3">
                                             <span class="d-block">
-                                                <span class="text-black">Shaheer Jamal</span>, &mdash; React.js
+                                                <span class="text-light">Shaheer Jamal</span> &mdash; React.js
                                                 developer
                                             </span>
                                         </p>
@@ -506,7 +518,7 @@
         <!-- Contact Us-->
         <section class="section section-contact" id="contact-us">
 
-            <div class="container p-5" id="contact-us-container">
+            <div class="container" id="contact-us-container">
                 <div class="row mb-5 align-items-end">
                     <div class="col-md-6 mx-auto text-center" data-aos="fade-up">
                         <h2>Contact Form</h2>
@@ -518,15 +530,15 @@
 
                         <div class="row">
                             <div class="col-md-12 form-group mt-3 mt-md-0">
-                                <label for="name" >Email</label>
+                                <label for="name" style="color: black !important;">Email</label>
                                 <input type="email" class="form-control w-100" name="email" id="email" required>
                             </div>
                             <div class="col-md-12 form-group mt-3">
-                                <label for="name" >Subject</label>
+                                <label for="name" style="color: black !important;">Subject</label>
                                 <input type="text" class="form-control" name="subject" id="subject" required>
                             </div>
                             <div class="col-md-12 form-group mt-3">
-                                <label for="name" >Message</label>
+                                <label for="name" style="color: black !important;">Message</label>
                                 <textarea class="form-control" name="message" required></textarea>
                             </div>
 

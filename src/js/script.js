@@ -183,6 +183,7 @@ function AddNewDestination() {
         <td><select class="txtTransport form-select" onchange="TransportChanged(this)"></select></td>
         <td><select class="txtHotels form-select" onchange="HotelChanged(this)"></select></td>
         <td><input type="number" class="form-control" min="0" value="1" onchange="DaysChanged(this)"></td>
+        <td><button class="btn btn-danger" type="button" style="padding: 5px !important; margin-top: 10px;" onclick="RemoveDestination(this)">Remove</button></td>
     </tr>`);
 
   DestinationChanged(
@@ -379,6 +380,29 @@ function GiveHotelSuggestion(e) {
 }
 
 function ResetForm() {
+  $("#tblDestinations tbody").empty();
+  $("#tblDestinations tbody").append(`<tr id="table-row-1">
+  <th scope="row" width="250px">
+      <select class="txtDestination form-select" disabled
+          onchange="DestinationChanged(this)"> </select>
+  </th>
+  <td width="250px">
+      <select class="txtTransport form-select" disabled
+          onchange="TransportChanged(this)"></select>
+  </td>
+  <td width="250px">
+      <select class="txtHotels form-select"
+          onchange="HotelChanged(this)"></select>
+  </td>
+  <td width="250px">
+      <input type="number" class="txtStayingDays form-control" min="0"
+          value="1" onchange="DaysChanged(this)">
+  </td>
+  <td width="100px">
+      <button class="btn btn-danger" type="button" style="padding: 5px !important; margin-top: 10px;" onclick="RemoveDestination(this)">Remove</button>
+  </td>
+</tr>`);
+
   var departureCityDropdown = $("#txtDepartureCity").selectize();
   var control = departureCityDropdown[0].selectize;
   control.clear();
